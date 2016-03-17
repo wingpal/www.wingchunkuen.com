@@ -1,0 +1,1 @@
+<div id = "LeftLogo"><img src="pictures/side_logo.png" width="200" height="210" alt="Logo" /></div>

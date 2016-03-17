@@ -1,0 +1,735 @@
+#Container {
+    width: 1020px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+
+
+
+}
+
+#Header {
+    height: 140px;
+
+
+ }
+
+#Menu {
+    height: 70px;
+
+}
+
+#SideBar {
+    width: 200px;
+    height: 430px;
+    float: left;
+}
+#LeftLogo{
+    height: 210px;
+
+}
+#LeftMenu{
+    height: 220px;
+
+}
+#MainBody {
+    width: 820px;
+    height: 500px;
+    float: right;
+}
+
+#Footer {
+    height: 50px;
+    margin-bottom: 21px;
+    clear: both;
+}
+#MainPart{
+    height: 50px;
+    width: 750px;
+    float: left;
+    position: relative;
+}
+
+#MaliLogoi{
+    height: 50px;
+    width: 50px;
+    float: left;
+}
+#image {
+    margin-top: 10px;
+}
+
+#EmptyPart{
+    width: 170px;
+    height: 50px;
+    float: right;
+}
+
+#Article {
+    height:500px;
+    width:820px;
+    font:16px/26px Georgia, Garamond, Serif;
+    overflow:auto;
+    text-align: center;
+    margin: auto;
+    padding-top: 10px;
+
+
+}
+
+
+
+/*MAIN MENU*/
+
+body {
+    background-color: #EBE8E4;
+    color: darkorange;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-align:center;
+}
+
+nav {
+    background-color: #EBE8E4;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+    color: darkorange;
+    display: block;
+    margin: 8px 22px 8px 22px;
+    overflow: hidden;
+    width: 95%;
+
+
+}
+
+nav ul {
+
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+
+
+    display: inline-block;
+    list-style-type: none;
+
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+nav > ul > li > a > .caret {
+    border-top: 4px solid #aaa;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    content: "";
+    display: inline-block;
+    height: 0;
+    width: 0;
+    vertical-align: middle;
+
+    -webkit-transition: color 0.1s linear;
+    -moz-transition: color 0.1s linear;
+    -o-transition: color 0.1s linear;
+    transition: color 0.1s linear;
+}
+
+nav > ul > li > a {
+    color: darkorange;
+    display: block;
+    line-height: 56px;
+    padding: 0 24px;
+    text-decoration: none;
+}
+
+nav > ul > li:hover {
+    background-color: #aaaaaa;
+}
+
+nav > ul > li:hover > a {
+    color: rgb( 255, 255, 255 );
+}
+
+nav > ul > li:hover > a > .caret {
+    border-top-color: rgb( 255, 255, 255 );
+}
+
+nav > ul > li > div {
+    background-color: rgb( 40, 44, 47 );
+    border-top: 0;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
+    display: none;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    width: 165px;
+    visibility: hidden;
+
+    -webkit-transiton: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    -ms-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+    -transition: opacity 0.2s;
+}
+
+nav > ul > li:hover > div {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+nav > ul > li > div ul > li {
+    display: block;
+}
+
+nav > ul > li > div ul > li > a {
+    color: #fff;
+    display: block;
+    padding: 12px 24px;
+    text-decoration: none;
+}
+
+nav > ul > li > div ul > li:hover > a {
+    background-color: rgba( 255, 255, 255, 0.1);
+}
+
+
+/*GALERY*/
+
+
+@import url(http://fonts.googleapis.com/css?family=Rokkitt);
+/*
+ * jQuery FlexSlider v1.8
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* Browser Resets */
+.flex-container a,
+.flexslider a,
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;}
+
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider {margin: 0; padding: 0;}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {max-width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider {background: #fff; border: 4px solid #fff; position: relative; -webkit-border-radius: 5px; -moz-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; zoom: 1;}
+.flexslider .slides {zoom: 1;}
+.flexslider .slides > li {position: relative;}
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+.flex-container {zoom: 1; position: relative;}
+
+/* Caption style */
+/* IE rgba() hack */
+.flex-caption {background:none; -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); zoom: 1;}
+.flex-caption {width: 96%; padding: 2%; margin: 0; position: absolute; left: 0; bottom: 0; background: rgba(0,0,0,.3); color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 14px; line-height: 18px;}
+
+/* Direction Nav */
+.flex-direction-nav { height: 0; }
+.flex-direction-nav a {width: 52px; height: 52px; margin: -13px 0 0; display: block; background: url(theme/bg_direction_nav.png) no-repeat; position: absolute; top: 50%; cursor: pointer; text-indent: -999em;}
+.flex-direction-nav .flex-next {background-position: -52px 0; right: -21px;}
+.flex-direction-nav .flex-prev {left: -20px;}
+.flex-direction-nav .flex-disabled {opacity: .3; filter:alpha(opacity=30); cursor: default;}
+
+/* Control Nav */
+.flex-control-nav {width: 100%; position: absolute; bottom: -30px; text-align: center;}
+.flex-control-nav li {margin: 0 0 0 5px; display: inline-block; zoom: 1; *display: inline;}
+.flex-control-nav li:first-child {margin: 0;}
+.flex-control-nav a {width: 13px; height: 13px; display: block; background: url(theme/bg_control_nav.png) no-repeat; cursor: pointer; text-indent: -999em;}
+.flex-control-nav a:hover {background-position: 0 -13px;}
+.flex-control-nav a.flex-active {background-position: 0 -26px; cursor: default;}
+.flex-caption h3 {font:26px 'Rokkitt', Georgia, "Times New Roman", Times, serif;font-weight:bold;margin:0 0 5px;}
+#responsiveFlag{font-size:0;line-height:0;}
+@media handheld, only screen and (min-width: 320px) {
+    .flex-caption {
+        position:static;
+        background:#333;
+    }
+}
+@media handheld, only screen and (min-width: 640px) {
+    .flex-caption {
+        position:absolute;
+        background: rgba(0,0,0,.3);
+    }
+}
+@media handheld, only screen and (min-width: 1024px) {
+    .flexslider .slides > li {
+        display: inline-block;
+        width: 25%;
+        overflow: hidden;
+        position: relative;
+        margin-right: -.25em;
+        /*for 5 slides
+        width:20.08%;
+        */
+    }
+
+    .flexslider .slides img {
+        display: block;
+        max-width: 1000px;
+    }
+
+    .flex-caption {
+        width: 440px;
+        padding: 20px 30px;
+    }
+
+    #responsiveFlag {
+        display: block;
+    }
+}
+
+/*SIDE MENU*/
+
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+/* Starter CSS for Flyout Menu */
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+#cssmenu ul {
+    position: relative;
+    z-index: 597;
+    float: left;
+}
+#cssmenu ul li {
+    float: left;
+    min-height: 1px;
+    line-height: 1em;
+    vertical-align: middle;
+}
+#cssmenu ul li.hover,
+#cssmenu ul li:hover {
+    position: relative;
+    z-index: 599;
+    cursor: default;
+}
+#cssmenu ul ul {
+    margin-top: 1px;
+    visibility: hidden;
+    position: absolute;
+    top: 1px;
+    left: 99%;
+    z-index: 598;
+    width: 100%;
+}
+#cssmenu ul ul li {
+    float: none;
+}
+#cssmenu ul ul ul {
+    top: 1px;
+    left: 99%;
+}
+#cssmenu ul li:hover > ul {
+    visibility: visible;
+}
+#cssmenu ul li {
+    float: none;
+}
+#cssmenu ul ul li {
+    font-weight: normal;
+}
+/* Custom CSS Styles */
+#cssmenu {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    width: 200px;
+}
+#cssmenu ul a,
+#cssmenu ul a:link,
+#cssmenu ul a:visited {
+    display: block;
+    color: #848889;
+    text-decoration: none;
+    font-weight: 300;
+}
+#cssmenu > ul {
+    float: none;
+}
+
+#cssmenu > ul > li > a {
+    padding: 10px 20px;
+}
+#cssmenu > ul > li:hover {
+    border-left: 3px solid color: darkorange;
+}
+#cssmenu ul li:hover > a {
+    color: darkorange;
+}
+#cssmenu > ul > li:hover {
+    background: #f6f6f6;
+}
+/* Sub Menu */
+#cssmenu ul ul a:link,
+#cssmenu ul ul a:visited {
+    font-weight: 400;
+    font-size: 14px;
+}
+#cssmenu ul ul {
+    width: 180px;
+    background: none;
+    border-left: 20px solid transparent;
+}
+#cssmenu ul ul a {
+    padding: 8px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+#cssmenu ul ul li {
+    padding: 0 20px;
+    background: #fff;
+}
+#cssmenu ul ul li:last-child {
+    border-bottom: 3px solid #d7d8da;
+    padding-bottom: 10px;
+}
+#cssmenu ul ul li:first-child {
+    padding-top: 10px;
+}
+#cssmenu ul ul li:last-child > a {
+    border-bottom: none;
+}
+#cssmenu ul ul li:first-child:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -20px;
+    top: 13px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid #fff;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+}
+
+/* KONTAKT */
+
+#picinfo {
+    width: 250px;
+    height: 500px;
+    float: left;
+
+}
+#picinfo1{
+    width: 250px;
+    height: 120px;
+
+}
+#picinfo2{
+    height: 260px;
+    width: 250px;
+
+}
+#picinfo3{
+    height: 120px;
+    width: 250px;
+
+}
+#picinfo21{
+    height: 160px;
+    width: 250px;
+
+}
+#picinfo22{
+
+
+    height: 100px;
+    width: 250px;
+    text-align:center;
+}
+
+#gmaps_and_contact {
+    width: 570px;
+    height: 500px;
+    float: right;
+}
+#gmaps{width: 570px;
+    height: 250px;
+    border: solid  1px orange ;
+    }
+#contactform{width: 570px;
+    height: 250px;
+    text-align:left;
+    }
+
+
+
+
+
+/*  Contact Form  */
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #E5E5E5;
+    width: 200px;
+    color: #999999;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+}
+
+textarea {
+    width: 400px;
+    height: 80px;
+    max-width: 400px;
+    line-height: 18px;
+}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+    border-color: 1px solid #C9C9C9;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 8px;
+}
+
+.form label {
+    margin-left: 10px;
+    color: #999999;
+}
+
+/* Submit Button */
+
+.submit input {
+    width: 100px;
+    height: 40px;
+    background-color: #474E69;
+    color: #FFF;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+
+}
+
+#admin_container{
+    width: 1200px;
+    height: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+
+
+}
+#admin_header{
+    height: 70px;
+    background-color: black;
+}
+#admin_main{
+    height: 510px;
+    background-image: url("../pictures/ipman.jpg");
+}
+
+#admin_main_left{
+    height: 510px;
+    width: 425px;
+    float: left;
+}
+#admin_main_center{
+    height: 510px;
+    width: 350px;
+    float: left;
+}
+#admin_main_center_up{
+    height: 255px;
+    width: 350px;
+
+}
+#admin_main_center_login{
+    height: 255px;
+    width: 350px;
+
+
+}
+
+#admin_main_right{
+    height: 510px;
+    width: 425px;
+    float: right;
+}
+#admin_footer{
+    height: 70px;
+    background-color: black;
+
+}
+#logout {
+    float: right;
+}
+
+
+#admin_main_all{
+    height: 510px;
+    background-image: url("../pictures/ipman.jpg");
+}
+
+#admin_all_left{
+    height: 510px;
+    width: 250px;
+    float: left;
+}
+#admin_all_left_top{
+    height: 255px;
+    width: 250px;
+}
+#admin_all_left_menu{
+    height: 255px;
+    width: 250px;
+}
+#admin_mainwindow {
+    height: 480px;
+    width: 950px;
+    float: right;
+    color: gray;
+    overflow:auto;
+
+}
+
+
+
+
+table {
+    table-layout:fixed;
+
+}
+td {font-size: small;
+    border-collapse: collapse;
+    word-wrap: break-word;}
+
+
+
+
+#pictures_thumbnails {
+
+    height: 450px;
+    width: 800px;
+    margin: 0 auto;
+
+
+}
+
+#thumbpicture {
+
+
+    height: 200px;
+    width: 200px;
+    float: left;
+    alignment: bottom;
+
+}
+
+#Videothumbnails {
+    margin: auto;
+}
+
+
+
+#dodaj_ucenika{
+    height: 100px;
+    width: 200px;
+    float: left;
+}
+#obrisi_ucenika{
+    height: 100px;
+    width: 350px;
+    float: left;
+    font-size: small;
+
+}
+#apdejtuj_ucenika{
+    height: 100px;
+    width: 350px;
+    float: left;
+    font-size: small;
+
+}
+
+
+/* Galerija */
+#galerycontainer{
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+}
+#gallery {
+
+    width: 843px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    margin: auto;
+    border: 1px solid darkorange;
+}
+
+#navigation {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: left;
+
+}
+
+#navigation li {
+    padding: 0;
+    margin: 0;
+    float: left;
+    clear: both;
+    border: 1px solid darkorange;
+
+}
+
+#navigation li a img {
+    display: block;
+    border: none;
+}
+
+#navigation li a {
+    display: block;
+}
+
+#full-picture {
+
+    margin-top: 25px;
+    width: 700px;
+    height: 450px;
+    overflow: hidden;
+    float: left;
+
+}
+
+
