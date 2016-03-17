@@ -1,42 +1,100 @@
-
-
 <?php
 
+/*** pocetak sesije ***/
+session_start();
 
-include '../database/pdo_connect.php';
-
-$user = $_POST['username'];
-$password = $_POST['password'];
-$errmsg_arr = array();
-$errflag = false;
-
-
-if($user == '') {
-$errmsg_arr[] = 'You must enter your Username';
-$errflag = true;
+/*** da li je ulogovan? ***/
+if(isset( $_SESSION['a_id'] ))
+{
+    $message = 'Users is already logged in';
 }
-if($password == '') {
-$errmsg_arr[] = 'You must enter your Password';
-$errflag = true;
+/*** da li su postovani? ***/
+if(!isset( $_POST['username'], $_POST['password']))
+{
+    $message = 'Please enter a valid username and password';
 }
+/*** user duzina? ***/
+elseif (strlen( $_POST['username']) > 20 || strlen($_POST['username']) < 4)
+{
+    $message = 'Incorrect Length for Username';
+}
+/*** pass duzina? ***/
+elseif (strlen( $_POST['password']) > 20 || strlen($_POST['password']) < 4)
+{
+    $message = 'Incorrect Length for Password';
+}
+/*** user alfa numeric? ***/
+elseif (ctype_alnum($_POST['username']) != true)
+{
+    $message = "Username must be alpha numeric";
+}
+/*** pass alfa numeric ***/
+elseif (ctype_alnum($_POST['password']) != true)
+{
 
-// query
-$result = $conn->prepare("SELECT * FROM users WHERE a_username= :hjhjhjh AND a_password= :asas");
-$result->bindParam(':hjhjhjh', $user);
-$result->bindParam(':asas', $password);
-$result->execute();
-$rows = $result->fetch(PDO::FETCH_NUM);
-if($rows > 0) {
-header("location: ../admin/welcome_page.php");
+    $message = "Password must be alpha numeric";
 }
-else{
-$errmsg_arr[] = 'Username and Password are not found';
-$errflag = true;
-}
-if($errflag) {
-$_SESSION['ERRMSG_ARR'] = $errmsg_arr;
-session_write_close();
-header("location: ../login.php");
-exit();
+else
+{
+    /*** ako je sve ok konekcija sa bazom ***/
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
+
+
+
+
+    $mysql_hostname = 'localhost';
+
+    $mysql_username = 'root';
+
+    $mysql_password = 'root';
+
+
+    $mysql_dbname = 'kuendb';
+
+    try
+    {
+        $dbh = new PDO("mysql:host=$mysql_hostname;dbname=$mysql_dbname", $mysql_username, $mysql_password);
+
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $dbh->prepare("SELECT a_id, a_username, a_password FROM users
+                    WHERE a_username = :username AND a_password = :password");
+
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmt->bindParam(':password', $password, PDO::PARAM_STR, 40);
+
+        $stmt->execute();
+
+        $id = $stmt->fetchColumn();
+
+        if($id == false)
+        {
+            $message = 'Login Failed';
+        }
+
+        else
+        {
+
+            $_SESSION['a_id'] = $id;
+
+            header('Location: ../admin/welcome_page.php');
+        }
+
+
+    }
+    catch(Exception $e)
+    {
+        $message = 'We are unable to process your request."';
+    }
 }
 ?>
+
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+<p><?php echo $message; ?>
+</body>
+</html>

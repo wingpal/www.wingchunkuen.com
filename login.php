@@ -1,8 +1,4 @@
-<?php
-session_start();
 
-?>
-<?php include "functions/errchacker.php";?>
 
 <!doctype html>
 
@@ -32,7 +28,7 @@ session_start();
                     <form method="post" name="login" action="functions/login_action.php">
                         <input type="text" placeholder="username" name="username"/><br>
                         <input type="password" placeholder="password" name="password"/><br>
-                        <input type="submit" name = "submit" "value="Login"/>
+                        <input type="submit" name = "submit" value="Login"/>
                     </form>
 
 

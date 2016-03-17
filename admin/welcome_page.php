@@ -1,4 +1,16 @@
+<?php
 
+
+/*** pocetak sesije ***/
+session_start();
+
+if($_SESSION['a_id'] == '')
+{
+    header('Location: ../functions/off_access.php');
+}
+
+
+?>
 
 <!doctype html>
 
@@ -21,11 +33,13 @@
         <div id="admin_all_left">
             <div id="admin_all_left_top"><img src="../pictures/side_logo.png" width="200" height="210" alt="Logo" style="padding-top: 30px"></div>
             <div id="admin_all_left_menu">
-                <div id = "LeftMenu" style="padding-top: 70px" align="center">
+                <div id = "LeftMenu" style="padding-top: 0px" align="center">
                     <div id='cssmenu'>
                         <ul>
                             <li class='active has-sub'><a href='evidencija.php'><span>Evidencija</span></a></li>
                             <li class='active has-sub'><a href='comments.php'><span>Komentari</span></a></li>
+                            <li class='active has-sub'><a href='picadd.php'><span>Dodaj sliku</span></a></li>
+                            <li class='active has-sub'><a href='textadd.php'><span>Dodaj clanak</span></a></li>
                         </ul>
                         <div id="logout" style="padding-top: 50px">
                             <form method="post" name="logout">
