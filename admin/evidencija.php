@@ -61,7 +61,7 @@ $query = $conn->query('SELECT * FROM student_list')
                             <li class='active has-sub'><a href='evidencija.php'><span>Evidencija</span></a></li>
                             <li class='active has-sub'><a href='comments.php'><span>Komentari</span></a></li>
                             <li class='active has-sub'><a href='upload_form.php'><span>Dodaj sliku</span></a></li>
-                            <li class='active has-sub'><a href='textadd.php'><span>Dodaj clanak</span></a></li>
+                            <li class='active has-sub'><a href='article_add.php'><span>Dodaj clanak</span></a></li>
                         </ul>
                     </div>
                     <div id="logout" style="padding-top: 50px">
