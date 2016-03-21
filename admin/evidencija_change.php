@@ -17,7 +17,7 @@ if($_SESSION['a_id'] == '')
 
 <?php
 
-include '../functions/update_function.php';
+
 
 $vrednost = (int)$_POST['update_num']; //da bi iscitao iz baze mora se kastovati u int
 
@@ -77,7 +77,7 @@ $result = $query->fetch();
             <h3 align="center">Izmena podataka clana: </h3>
 
 
-            <form method="post" action="../functions/update_izvrsna.php" align="right" style="padding-top: 70px; margin: auto; position: absolute; right: 450px;" >
+            <form method="post" action="../functions/form.php?action=updatestudent" align="right" style="padding-top: 70px; margin: auto; position: absolute; right: 450px;" >
 
                 Ime:
                 <input type="text" name="ime" value="<?php echo $result['s_name']?>"><br>

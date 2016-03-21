@@ -80,7 +80,7 @@ $query = $conn->query('SELECT * FROM student_list')
                      <button type="submit">Dodaj novog clana</button>
                 </form></div>
 
-                <div id="obrisi_ucenika"><form action="../functions/delete_function.php" method="post">
+                <div id="obrisi_ucenika"><form action="../functions/form.php?action=deletestudent" method="post">
                     Broj clana koji zelite da obrisete : <input type="text" name="id" required style="height: 15px; width: 15px"><br><br>
                     <input type="submit" name="delete" value="Obrisi" onclick="onDelete()">
                 </form></div>

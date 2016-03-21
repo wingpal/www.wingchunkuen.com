@@ -39,7 +39,7 @@
                 <div id="contactform">
                     Kontaktirajte nas:
 
-                    <form class="form" method="post" action="functions/contact_us.php">
+                    <form class="form" method="post" action="functions/form.php?action=contact">
 
 
                             <input type="text" name="name" id="name" placeholder="Petar Petrovic" />

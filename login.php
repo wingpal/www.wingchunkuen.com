@@ -25,7 +25,7 @@
                     Ulogujte se:
                     <br/>
                     <br/>
-                    <form method="post" name="login" action="functions/login_action.php">
+                    <form method="post" name="login" action="functions/form.php?action=login">
                         <input type="text" placeholder="username" name="username"/><br>
                         <input type="password" placeholder="password" name="password"/><br>
                         <input type="submit" name = "submit" value="Login"/>
