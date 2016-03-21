@@ -57,7 +57,7 @@ if($_SESSION['a_id'] == '')
         <div id="admin_mainwindow" >
             <br>
             <h3 align="center">Dodavanje novog clana</h3>
-            <form id="EvidencijaForm" method="post" action="../functions/addingstudent.php" align="right" style="padding-top: 70px; margin: auto; position: absolute; right: 450px;" >
+            <form id="EvidencijaForm" method="post" action="../functions/form.php?action=addstudents" align="right" style="padding-top: 70px; margin: auto; position: absolute; right: 450px;" >
 
                 Ime:
                 <input type="text" name="ime" ><br>

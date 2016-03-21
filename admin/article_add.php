@@ -64,7 +64,7 @@ if($_SESSION['a_id'] == '')
             <script>tinymce.init({ selector:'textarea' });</script>
 
             <br><br>    DODAVANJE TEKSTA<br><br>
-            <form name="textarea" id="textarea" method="post" action="../functions/textareaadd.php">
+            <form name="textarea" id="textarea" method="post" action="../functions/form.php?action=textareaadd">
             <textarea name="textarea">
             </textarea><br><br>
                 <input type="submit" value="Dodaj tekst">
